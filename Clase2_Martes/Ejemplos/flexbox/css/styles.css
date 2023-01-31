@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    height: 500px;
+    border: 2px solid black;
+    display: flex;
+
+    /* Establece el tipo de Eje a utilizar como Main Axis para todos los elementos */
+    flex-direction: row;
+    /* row | row-reverse | column | column-reverse */
+
+    /* Permite establecer si los elementos pueden o no desbordarse si su tamano sobrepasa al de su contenedor */
+    /* flex-wrap: wrap; */
+    /* nowrap | wrap | wrap-reverse */
+
+    /* Permite combinar en una linea las propiedades de direction y wrap (en ese orden) */
+    /* flex-flow: row nowrap; */
+    /* Para direction: row | row-reverse | column | column-reverse */
+    /* Para wrap: nowrap | wrap | wrap-reverse */
+
+    /* Permite agregar una separacion a los laterales de cada elemento (similar a margin) */
+    /* gap: 10px; */
+
+    /* Alinea a los elementos con respecto al eje horizontal (o al Main Axis) */
+    justify-content: flex-start;
+    /* flex-start | flex-end | center | space-between | space-around | space-evenly | strech */
+    
+    /* Alinea a los elementos con respecto al eje vertical (o al Cross Axis) */
+    align-items: flex-start;
+    /* flex-start | flex-end | center | strech */
+
+    /* Alinea a los elementos cuando estos se han desbordado del contenedor padre (por lo tanto solo se podria aplicar cuando este activado el wrap) */
+    align-content: normal;
+    /* normal | flex-start | flex-end | center | space-between | space-around | space-evenly */
+}
+
+.item {
+    /* margin: 20px; */
+    height: 100px;
+    text-align: center;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Realiza lo contrario a grow, disminuyendo el factor de crecimiento de cada elemento entre mas grande sea el shrink, pero si esta en 0 le quita la habilidad al elemento de disminuirse */
+    /* flex-shrink: 1; */
+
+    /* Establece el tamano del elemento con respecto al Main Axis, teniendo mayor prioridad que width (solo puede aplicarse si el elemento no utiliza el valor de strech) */
+    flex-basis: 100px;
+}
+
+#caja1 {
+    background-color: red;
+    
+    /* Permite cambiar el orden de cada elemento */
+    order: 0;
+}
+
+#caja2 {
+    background-color: orange;
+
+    /* Permite alinear a cada elemento por separado con respecto a su Cross Axis (por lo tanto cuenta con las mismas propiedades que align-item) */
+    align-self: flex-start;
+    /* flex-start | flex-end | center | strech */
+}
+
+#caja3 {
+    background-color: yellow;
+
+    /* Indica el tipo de factor de crecimiento del elemento con respecto a las dimensiones del cotenedor padre */
+    /* flex-grow: 0; */
+
+    /* flex-shrink: 10; */
+}
+
+#caja4 {
+    background-color: green;
+}
+
+#caja5 {
+    background-color: blue;
+    /* width: 500px; */
+}
