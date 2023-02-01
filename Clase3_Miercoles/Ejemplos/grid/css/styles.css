@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial';
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    min-height: 600px;
+    margin: 40px auto;
+    border: 3px solid #000;
+    /* ========== Display Grid ========== */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /* Para poder utilizar las demás propiedades no se especificara su tamaño*/
+    /* grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 20%); */
+    /* Define el tamaño que abarcará cada elemento en columna o filas */
+    /* auto     => Valor por defecto que ajusta su anchura a la de su contenedor padre */
+    /* "unidad" => Se puede emplear una unidad fija o relativa para especificar la anchura */
+    /* %        => Establece el porcentaje de cada columna o fila respecto al tamaño de su contenedor
+                   padre  */
+    /* fr       => Fracciona cada columna o fila en la cantidad de fr especificadas por espacio*/
+    /* calc()   => Permite establecer un tamaño variable por un calculo realizado
+                   Se puede emplear tanto con unidades o porcentajes */
+    /* repeat() => Permite asignar un número de filas o columnas con cierta medida especificada */
+    /*             Algunas características de repeat() es que podemos emplear las funciones: */
+    /*             auto-fit => Agrega nuevos elementos con tamaño adaptativo a cada fila o columna */
+    /*             minmax() => Establece el tamaño mínimo y máximo para cada elemento dentro de su fila o columna  */
+    /*             Por lo que tendriamos: repeat(auto-fit, minmax(tamaño_minimo, tamaño_máximo)); */
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    
+    /* grid-auto-rows: 100px; */
+    /* grid-auto-columns: 50%; */
+    /* Establece el tamaño que debe tener cada columna o fila cuando se cree una nueva */
+    /* Para este ejemplo es mejor comentar las propiedades template */
+
+    /* grid-template-areas:
+        "e1 e1 e1 e1"
+        "e2 e2 e4 e4"
+        "e3 e3 e4 e4"
+        "e3 e3 e6 e6"
+        "e5 e5 e6 e6"
+        "e5 e5 e6 e6"; */
+    /* Establece la cantidad de filas y columnas que tendrá cada elemento de forma explícita
+       Para poder emplearlo correctamente se necesita especificar las áreas de cada elemento 
+       en forma de cuadrado o rectángulo */
+    
+    /* grid-template: 
+        "e1 e1 e1"
+        "e2 e2 ."
+        "e3 e3 e4"
+        ". e5 e5"
+        ". e5 e5"
+        ". e6 e6"; */
+    /* grid-template: 25% 25% / auto auto auto; */
+    /* Emplea las propiedades combinadas de columns, rows y areas separadas por un espacio */
+    /* none          => Valor por defecto que deshabilita el uso de esta forma (explicita) */
+    /* "areas . . ." => Especifica el área de cada elemento en forma de cuadrados o rectángulos*/
+    /* row / column  => Especifica la cantidad o tamaño de cada elemento por fila y columna */
+
+    /* gap: 1rem 2rem; */
+    /* Separación existente entre elementos (se define mediante distancias fijas o relativas) */
+    /* Cuenta con algunas variantes como: */
+    /* row-gap      => Define la separación entre filas */
+    /* column-gap   => Define la separación entre columnas */
+    /* Para el ejemplo con row-gap cambiar el flex-direction a column */
+}
+
+.element {
+    /* Si no se establece el ancho y la altura entonces el elemento se
+       estirara por todo el grid */
+    /* width: 100px;
+    height: 100px; */
+    color: #fff;
+    font-size: 40px;
+    /* ========== Propiedades para el contenido de los elementos ========== */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.element--1{
+    background-color: salmon;
+    /* Especificamos el identificador para el area del elemento */
+    /* grid-area: e1; */
+
+    /* grid-row: 1 / 4; */
+    /* grid-row     => Establece en que fila comenzará y terminará su posición */
+    /* fila_inicial / fila_final */
+
+    /* grid-column: -1 / -3; */
+    /* grid-column  => Establece en que columna comenzará y terminará su posición */
+    /* columna_inicial / columna_final */
+}
+
+.element--2 {
+    background-color: slateblue;
+    /* Especificamos el identificador para el area del elemento */
+    /* grid-area: e2; */
+}
+
+.element--3 {
+    background-color: green;
+    /* Especificamos el identificador para el area del elemento */
+    /* grid-area: e3; */
+}
+
+.element--4 {
+    background-color: orange;
+    /* Especificamos el identificador para el area del elemento */
+    /* grid-area: e4; */
+}
+
+.element--5 {
+    background-color: plum;
+    /* Especificamos el identificador para el area del elemento */
+    /* grid-area: e5; */
+}
+
+.element--6 {
+    background-color: darkturquoise;
+    /* Especificamos el identificador para el area del elemento */
+    /* grid-area: e6; */
+}
+
+/* ========== Para el ejemplo de grid-template-areas ========== */
+/* @media (min-width: 700px){
+    .container {
+        grid-template-areas:
+            "e1 e1 e1 e1 e4 e4"
+            "e2 e2 e2 e2 e4 e4"
+            "e3 e3 e3 e3 e4 e4"
+            "e3 e3 e3 e3 e6 e6"
+            "e5 e5 e5 e5 e6 e6"
+            "e5 e5 e5 e5 e6 e6";
+    }
+} */
