@@ -1,0 +1,94 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use 'sass:list';
+
+// Condicionales
+$condicional: true;
+
+@debug $condicional;
+@debug meta.type-of($condicional);
+
+// Estructuras de control:
+
+// If-Else
+// @if (not $condicional) {
+//     .grid {
+//         display: grid;
+//     }
+// } @else {
+//     .flex {
+//         display: flex;
+//     }
+// }
+
+// Ciclo for
+// @for $i from 1 to 5 {
+// @for $i from 1 through 5 {
+//     // .card--#{$i} {
+//     //     color: aqua;
+//     // }
+
+//     .animation__name--#{$i} {
+//         animation-name: name#{$i};
+//         animation-duration: 1s * $i;
+//         transform: translate(0);
+
+//         @keyframes name#{$i} {
+//             100% {
+//                 transform: translate(100% * $i);
+//             }
+//         }
+//     }
+// }
+
+// Ciclo each
+
+// Diccionarios - Maps
+$colores: (
+    "primary": blue,
+    "secondary": yellow,
+    "light": white,
+    "dark": black
+);
+
+//  map-get($map: $diccionario, $key: "clave")
+h1 {
+    color: map-get($map: $colores, $key: "secondary");
+}
+
+// Listas:
+$margins: 10px 20px 30px 40px;
+$paddings: 15px, 25px, 35px, 45px;
+$sizes: 100px, 2rem, 5em, 10vh;
+
+.header {
+    margin-top: list.nth($list: $margins, $n: 3);
+}
+
+@each $item in $sizes {
+    .lista__#{$item} {
+        font-size: $item;
+    }
+}
+
+$estilos: (
+    "t__primary-color": crimson,
+    "t__secondary-color": yellow,
+    "shadow": purple,
+);
+
+@each $clave, $valor in $colores {
+    .boton__#{$valor} {
+        background-color: $valor;
+    }
+}
+
+@each $clave, $valor in $estilos {
+    .#{$clave} {
+        @if ($clave != 'shadow') {
+            color: $valor;  
+        } @else {
+            box-shadow: $valor;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+// Importacion de archivos:
+@use 'variables' as var;
+@use 'nesting' as nest;
+@use 'mixins' as mixins;
+@use 'estructuras_de_control' as structs;
+
+// Importacion de modulos:
+@use 'sass:string';
+@use 'sass:math';
+@use 'sass:list';
+// @use 'sass:meta';
+@use 'sass:map';
+
+// Esto es un comentario de SASS
+/* Esto es otro comentario de SASS compatible con CSS */
+
+// * {
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+// }
+
+// Variables en SASS
+$var_color: red;
+
+body {
+    $var_color: yellow;
+    // background-color: $var_color;
+    background-color: var.$var_main-color;
+}
+
+h1 {
+    color: $var_color;
+}
+
+// Especificando las custom properties de CSS desde SASS
+:root {
+    --main_color: #{$var_color};
+}
+
+// Interpolacion #{ $variables }
+$selector: '.hero';
+$propiedad: 'display';
+$valor: grid;
+
+#{ $selector } {
+    background-color: yellow;
+
+    #{$propiedad}: $valor;
+    #{$propiedad}: string.quote($valor);
+}
+
+// Importando el contenido de Mixins
+.card {
+    background-color: purple;
+    @include mixins.properties();
+    font-size: mixins.multiplicadorPX(4);
+}
+
+// @include structs;

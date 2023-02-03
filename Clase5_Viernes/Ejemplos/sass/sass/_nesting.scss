@@ -1,0 +1,46 @@
+// Metodologia BEM
+
+// Bloques          - Main - Card - Carrusel
+// Elementos        - Boton - Titulo - Imagen
+// Modificadores    - Color - Tipografia - Tamaño
+
+// Su declaracion es:
+.card {
+    display: flex;
+    width: 200px;
+    height: 200px;
+}
+
+.card__boton {
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+
+.card__boton--principal {
+    background-color: red;
+}
+
+// Ejemplo de anidamiento:
+.main {
+    background-color: yellow;
+    &__publicacion {
+        background-color: black;
+        &--colorSecundario {
+            background-color: white;
+        }
+    }
+    h1 {
+        color: blue;
+    }
+}
+
+// .main__publicacion {
+//     background-color: red;
+// }
+
+.main h1 {
+    color: yellow;
+}
+
+

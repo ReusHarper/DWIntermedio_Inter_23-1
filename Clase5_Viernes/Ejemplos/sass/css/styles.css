@@ -1,0 +1,118 @@
+.card {
+  display: flex;
+  width: 200px;
+  height: 200px;
+}
+
+.card__boton {
+  display: flex;
+  width: 20px;
+  height: 20px;
+}
+
+.card__boton--principal {
+  background-color: red;
+}
+
+.main {
+  background-color: yellow;
+}
+.main__publicacion {
+  background-color: black;
+}
+.main__publicacion--colorSecundario {
+  background-color: white;
+}
+.main h1 {
+  color: blue;
+}
+
+.main h1 {
+  color: yellow;
+}
+
+h1 {
+  color: yellow;
+}
+
+.header {
+  margin-top: 30px;
+}
+
+.lista__100px {
+  font-size: 100px;
+}
+
+.lista__2rem {
+  font-size: 2rem;
+}
+
+.lista__5em {
+  font-size: 5em;
+}
+
+.lista__10vh {
+  font-size: 10vh;
+}
+
+.boton__blue {
+  background-color: blue;
+}
+
+.boton__yellow {
+  background-color: yellow;
+}
+
+.boton__white {
+  background-color: white;
+}
+
+.boton__black {
+  background-color: black;
+}
+
+.t__primary-color {
+  color: crimson;
+}
+
+.t__secondary-color {
+  color: yellow;
+}
+
+.shadow {
+  box-shadow: purple;
+}
+
+/* Esto es otro comentario de SASS compatible con CSS */
+body {
+  background-color: green;
+}
+
+h1 {
+  color: red;
+}
+
+:root {
+  --main_color: red;
+}
+
+.hero {
+  background-color: yellow;
+  display: grid;
+  display: "grid";
+}
+
+.card {
+  background-color: purple;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 10px;
+  font-size: 40px;
+}
+
+/*# sourceMappingURL=styles.css.map */

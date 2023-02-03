@@ -1,0 +1,20 @@
+:root {
+    --color-main: pink;
+    --color-secondary: yellow;
+    --color-tertiary: blue;
+}
+
+body {
+    --color-red: red;
+    background-color: 
+        var(--color-main, 
+            var(--color-secondary, 
+                var(--color-tertiary, var(--color-red, orange))
+            )
+    );
+}
+
+h1 {
+    color: var(--color-red);
+}
+
